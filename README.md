@@ -1,47 +1,89 @@
-# Introduction to GitHub
+# 💰 Personal Finance Tracker
 
-_Get started using GitHub in less than an hour._
+A clean, responsive personal finance tracker web app built with **React**, **Tailwind CSS**, and **Chart.js**.
 
-## Welcome
+## Features
 
-People use GitHub to build some of the most advanced technologies in the world. Whether you’re visualizing data or building a new game, there’s a whole community and set of tools on GitHub that can help you do it even better. GitHub Skills’ “Introduction to GitHub” exercise guides you through everything you need to start contributing in less than an hour.
+- ➕ **Add Income & Expenses** — Quickly log transactions with amount, category, description, and date
+- 🏷️ **Categorize Transactions** — Choose from categories like Food, Rent, Transport, Entertainment, Healthcare, Shopping, Utilities, Salary, Freelance, and more
+- 📊 **Monthly Overview Chart** — Bar chart showing income vs. expenses for the last 6 months
+- 🍩 **Expense Breakdown** — Doughnut chart with a legend showing spending per category
+- 📋 **Dashboard Summary** — Total balance, total income, and total expenses at a glance
+- 💾 **localStorage Persistence** — All data is saved in your browser automatically
+- 🗑️ **Delete Transactions** — Hover over a transaction to reveal the delete button
+- 🔄 **Demo Data** — Pre-loaded with realistic sample transactions across 3 months
 
-- **Who is this for**: New developers, new GitHub users, and students.
-- **What you'll learn**: We'll introduce repositories, branches, commits, and pull requests.
-- **What you'll build**: We'll make a short Markdown file you can use as your [profile README](https://docs.github.com/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme).
-- **Prerequisites**: None. This exercise is a great introduction for your first day on GitHub.
-- **How long**: This exercise takes less than one hour to complete.
+## Tech Stack
 
-In this exercise, you will:
+| Technology | Purpose |
+|---|---|
+| [React](https://react.dev/) | UI component framework |
+| [Vite](https://vitejs.dev/) | Build tool & dev server |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
+| [Chart.js](https://www.chartjs.org/) + [react-chartjs-2](https://react-chartjs-2.js.org/) | Data visualizations |
 
-1. Create a branch
-2. Commit a file
-3. Open a pull request
-4. Merge your pull request
+## Getting Started
 
-### How to start this exercise
+### Prerequisites
 
-Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
+- [Node.js](https://nodejs.org/) v18 or higher
+- npm (comes with Node.js)
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=introduction-to-github&owner=%40me&name=skills-introduction-to-github&description=Exercise:+Introduction+to+GitHub&visibility=public)
+### Installation
 
-<details>
-<summary>Having trouble? 🤷</summary><br/>
+```bash
+# 1. Clone the repository
+git clone https://github.com/teja-787/skills-introduction-to-github.git
+cd skills-introduction-to-github
 
-When copying the exercise, we recommend the following settings:
+# 2. Install dependencies
+npm install
 
-- For owner, choose your personal account or an organization to host the repository.
+# 3. Start the development server
+npm run dev
+```
 
-- We recommend creating a public repository, since private repositories will use Actions minutes.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-If the exercise isn't ready in 20 seconds, please check the [Actions](../../actions) tab.
+### Build for Production
 
-- Check to see if a job is running. Sometimes it simply takes a bit longer.
+```bash
+npm run build
+```
 
-- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
+The production-ready files will be in the `dist/` folder.
 
-</details>
+### Preview Production Build
 
----
+```bash
+npm run preview
+```
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Dashboard.jsx        # Balance, income & expense summary cards
+│   ├── TransactionForm.jsx  # Form to add new transactions
+│   ├── TransactionList.jsx  # Scrollable list of all transactions
+│   ├── MonthlyChart.jsx     # Bar chart: monthly income vs expenses
+│   └── CategoryBreakdown.jsx # Doughnut chart: expense categories
+├── data/
+│   └── dummyData.js         # Category definitions & sample transactions
+├── App.jsx                  # Root component with state & localStorage logic
+├── main.jsx                 # React entry point
+└── index.css                # Tailwind CSS import
+```
+
+## Usage
+
+1. **View your dashboard** — The top cards show your total balance, income, and expenses across all time.
+2. **Add a transaction** — Fill in the form on the right: choose Income or Expense, enter an amount, pick a category, add a description, and select a date.
+3. **Browse transactions** — The transaction list shows all entries sorted by date (newest first). Hover a row to reveal the delete (✕) button.
+4. **Analyze spending** — The monthly bar chart and category doughnut chart update in real time as you add or delete transactions.
+5. **Reset demo data** — Click "Reset to demo data" in the header to restore the sample transactions.
+
+## License
+
+MIT
